@@ -26,6 +26,10 @@ fastify.get('/ping', opts, async (request, reply) => {
     reply.send({ pong: 'it worked!' })
 })
 
+fastify.get('/', opts, async (request, reply) => {
+    reply.send({ you: 'are home!' })
+})
+
 
 // Run the server!
 const start = async () => {
