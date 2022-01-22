@@ -1,5 +1,6 @@
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
+const port = process.env.PORT || 3000
 
 // Declare a route
 fastify.get('/hello', async (request, reply) => {
@@ -29,7 +30,7 @@ fastify.get('/ping', opts, async (request, reply) => {
 // Run the server!
 const start = async () => {
     try {
-        await fastify.listen(3011)
+        await fastify.listen(port)
     } catch (err) {
         fastify.log.error(err)
         process.exit(1)
